@@ -10,37 +10,51 @@
     <form id="msform">
       <!-- progressbar -->
       <ul id="progressbar">
-        <li class="active">Account Setup</li>
-        <li>Social Profiles</li>
-        <li>Personal Details</li>
+        <li class="active">Step 1</li>
+        <li>Step 2</li>
+        <li>Step 3</li>
       </ul>
       <!-- fieldsets -->
       <fieldset>
-        <h2 class="fs-title">Create your account</h2>
-        <h3 class="fs-subtitle">This is step 1</h3>
-        <input type="text" name="email" placeholder="Email" />
-        <input type="password" name="pass" placeholder="Password" />
-        <input type="password" name="cpass" placeholder="Confirm Password" />
+        <h2 class="fs-title">Step 1</h2>
+        <h3 class="fs-subtitle">What type of cleaning schedule would you prefer?</h3>
+        <!-- TODO more classes -->
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h2 class="fs-title">Social Profiles</h2>
-        <h3 class="fs-subtitle">Your presence on the social network</h3>
-        <input type="text" name="twitter" placeholder="Twitter" />
-        <input type="text" name="facebook" placeholder="Facebook" />
-        <input type="text" name="gplus" placeholder="Google Plus" />
+        <h2 class="fs-title">Step 2</h2>
+        <h3 class="fs-subtitle">Please enter your home's information.</h3>
+        <!-- TODO -->
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h2 class="fs-title">Personal Details</h2>
-        <h3 class="fs-subtitle">We will never sell it</h3>
-        <input type="text" name="fname" placeholder="First Name" />
-        <input type="text" name="lname" placeholder="Last Name" />
+        <h2 class="fs-title">Step 3</h2> <!-- TODO click out for extras? -->
+        <h3 class="fs-subtitle">Please select any extras you would like.</h3>
+        <!-- TODO extras -->
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h2 class="fs-title">Tah-Dah!</h2>
+        <h3 class="fs-subtitle">Your estimated cost per cleaning is:</h3>
+        <!-- TODO cost estimate -->
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h2 class="fs-title">Thanks for reaching out!</h2>
+        <h3 class="fs-subtitle">Please enter your contact information</h3>
+        <input type="text" name="fname" placeholder="Full Name" />
         <input type="text" name="phone" placeholder="Phone" />
-        <textarea name="address" placeholder="Address"></textarea>
+        <textarea name="address" placeholder="Email Address"></textarea>
+        <textarea name="comments" placeholder="Comments or Questions?"></textarea>
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="submit" name="submit" class="submit action-button" value="Submit" />
+      </fieldset>
+      <fieldset>
+        <h2 class="fs-title">Thank you!</h2>
+        <h3 class="fs-subtitle">A representative will get back to you in 1-2 business days.</h3>
       </fieldset>
     </form>
   </body>
