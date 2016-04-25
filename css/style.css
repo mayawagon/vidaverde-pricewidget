@@ -130,5 +130,10 @@ body {
 	color: white;
 }
 
+.schedule:active, .schedule:hover {
+    background: #56CC71;
+    color: white;
+}
+
 
 
