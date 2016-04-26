@@ -52,6 +52,20 @@ body {
 	color: #2C3E50;
 	font-size: 13px;
 }
+
+#msform input.text {
+	width: 20%;
+	margin-right: 10px;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.pad-bottom {
+	padding-bottom: 10px;
+}
+
 /*buttons*/
 #msform .action-button {
 	width: 100px;
@@ -130,14 +144,9 @@ body {
 	color: white;
 }
 
-.schedule:hover {
-    background: #56CC71;
-    color: white;
-}
-
-.schedule:hover {
-    background: #56CC71;
-    color: white;
+.schedule:hover, .schedule.selected {
+   background: #56CC71;
+   color: white;
 }
 
 
