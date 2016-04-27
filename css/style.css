@@ -18,7 +18,7 @@ body {
 }
 /*form styles*/
 #msform {
-	width: 400px;
+	width: 60%;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
@@ -54,7 +54,7 @@ body {
 }
 
 #msform input.text {
-	width: 20%;
+	width: 60px;
 	margin-right: 10px;
 }
 
@@ -106,7 +106,7 @@ body {
 	color: white;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 20%;
+	width: 25%;
 	float: left;
 	position: relative;
 }
@@ -147,6 +147,50 @@ body {
 .schedule:hover, .schedule.selected {
    background: #56CC71;
    color: white;
+}
+
+/* Quote */
+
+.quote-header {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 5px;
+}
+
+#quote {
+	font-size: 2.2em;
+	color: #27AE60;
+	margin-bottom: 15px;
+}
+
+#quote:before {
+	content: "$";
+}
+
+.extras {
+	padding-bottom: 15px;
+}
+
+
+.extra {
+	text-align: center;
+	font-size: .7em;
+	font-weight: normal;
+}
+
+.extra-icon {
+	height: auto;
+	width: 70%;
+	margin: 0 auto;
+	display: block;
+}
+
+#msform .extra input {
+	display: block;
+	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 
