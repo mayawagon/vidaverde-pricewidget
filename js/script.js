@@ -1,3 +1,5 @@
+var vidaVerde = {};
+
 //jQuery time
 $( document ).ready(function() {
 	var current_fs, next_fs, previous_fs; //fieldsets
@@ -85,12 +87,52 @@ $( document ).ready(function() {
 		viewNext();
 	};
 
+	var updateValues = function(){
+		vidaVerde.numBedooms = parseInt($("[name='numbedrooms']").val() || 0);
+		vidaVerde.numAdditionalRooms = parseInt($("[name='numadditionalrooms']").val() || 0);
+
+		// Rooms
+		vidaVerde.numTotalRooms = vidaVerde.numBedooms + vidaVerde.numAdditionalRooms;
+		vidaVerde.numBathrooms = parseInt($("[name='numbathrooms']").val() || 0);
+		vidaVerde.numAttics = parseInt($("[name='numatticrooms']").val() || 0);
+		vidaVerde.numPets = parseInt($("[name='numpets']").val() || 0);
+
+		vidaVerde.pets = parseInt($("[name='extraspets']").val() || 0);
+
+		// Extras
+		vidaVerde.laundry = parseInt($("[name='extraslaundry']").val() || 0);
+		vidaVerde.beds = parseInt($("[name='extrasbeds']").val() || 0);
+		vidaVerde.ovens = parseInt($("[name='extrasovens']").val() || 0);
+		
+		vidaVerde.closets = parseInt($("[name='extrasclosets']").val() || 0);
+		vidaVerde.fridges = parseInt($("[name='extrasfridges']").val() || 0);
+		vidaVerde.windows = parseInt($("[name='extraswindows']").val() || 0);
+
+		calculateQuote();
+	};
+
+	var calculateQuote = function(){
+		var quote = 0;
+
+		quote += 50 + (vidaVerde.numTotalRooms - 1) * 5;
+		quote += vidaVerde.numBathrooms * 10;
+		quote += vidaVerde.laundry * 10;
+		quote += vidaVerde.beds * 5;
+		quote += vidaVerde.ovens * 20;
+		quote += vidaVerde.closets * 20;
+		quote += vidaVerde.fridges * 20;
+		quote += vidaVerde.windows * 10;
+
+		$("#quote").text(quote.toString());
+	};
+
+	$("input").change(updateValues);
 	$(".next").click(viewNext);
 	$(".previous").click(viewPrevious);
-	
+
 	$(".button.schedule").click(selectButton);
 
 	$(".submit").click(function(){
 		return false;
-	})
+	});
 });
