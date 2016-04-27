@@ -6,7 +6,7 @@ $( document ).ready(function() {
 	var left, opacity, scale; //fieldset properties which we will animate
 	var animating; //flag to prevent quick multi-click glitches
 
-	var viewNext = function(){
+	var viewNext = function(event){
 		if(animating) return false;
 		animating = true;
 		
@@ -44,7 +44,7 @@ $( document ).ready(function() {
 		});
 	};
 
-	var viewPrevious = function(){
+	var viewPrevious = function(event){
 		if(animating) return false;
 		animating = true;
 		
@@ -84,7 +84,7 @@ $( document ).ready(function() {
 		var buttons = $(event.target).parent().find(".button");
 		buttons.removeClass("selected");
 		$(event.target).addClass("selected");
-		viewNext();
+		viewNext(event);
 	};
 
 	var updateValues = function(){
