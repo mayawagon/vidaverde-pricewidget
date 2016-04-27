@@ -149,5 +149,19 @@ body {
    color: white;
 }
 
+.price {
+	color: rgba(44,62,80,0.7);
+	margin-top: -20px;
+}
+
+.price > h1 {
+	font-size: 5em;
+	font-weight: 500;
+}
+
+.price > h2 {
+	font-size: 1em;
+}
+
 
 
