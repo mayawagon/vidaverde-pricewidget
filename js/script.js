@@ -132,7 +132,8 @@ $( document ).ready(function() {
 
 	$(".button.schedule").click(selectButton);
 
-	$(".submit").click(function(){
+	$(".submit").click(function(event){
+                viewNext(event);
 		return false;
 	});
 });
