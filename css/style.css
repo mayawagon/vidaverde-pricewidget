@@ -191,9 +191,7 @@ body {
 }
 
 #msform .extra input {
-	display: block;
 	padding: 5px;
-	margin: 0 auto;
 	text-align: center;
 }
 
@@ -203,6 +201,15 @@ body {
 	border-radius: 50%;
 	display: inline-block;
 	cursor: pointer;
+}
+
+.extra .increment {
+	padding: 8px;
+	font-size: .8em;
+}
+
+.extra .input-group {
+	display: block;
 }
 
 .glyphicon-plus {
