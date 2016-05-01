@@ -408,6 +408,7 @@ $( document ).ready(function() {
 			quote += vidaVerde.closets * 20;
 			quote += vidaVerde.fridges * 20;
 			quote += vidaVerde.windows * 10;
+			quote += vidaVerde.numPets * 10;
 
 			$("#quote").text(quote.toString());
 		}
