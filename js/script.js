@@ -1,4 +1,277 @@
 var vidaVerde = {};
+vidaVerde.prices = {
+	"1room": {
+		"1bath": {
+			weekly: 55,
+			"every other week": 65,
+			monthly: 90
+		},
+
+		"2bath": {
+			weekly: 65,
+			"every other week": 75,
+			monthly: 100
+		}
+	},
+
+	"2room": {
+		"1bath": {
+			weekly: 55,
+			"every other week": 65,
+			monthly: 90
+		},
+
+		"2bath": {
+			weekly: 65,
+			"every other week": 75,
+			monthly: 100
+		}
+	},
+
+	"3room": {
+		"1bath": {
+			weekly: 60,
+			"every other week": 70,
+			monthly: 95
+		},
+
+		"2bath": {
+			weekly: 70,
+			"every other week": 80,
+			monthly: 105
+		}
+	},
+
+	"4room": {
+		"1bath": {
+			weekly: 65,
+			"every other week": 80,
+			monthly: 105
+		},
+
+		"2bath": {
+			weekly: 75,
+			"every other week": 85,
+			monthly: 110
+		},
+
+		"3bath": {
+			weekly: 85,
+			"every other week": 95,
+			monthly: 120
+		}
+	},
+
+	"5room": {
+		"1bath": {
+			weekly: 70,
+			"every other week": 85,
+			monthly: 115
+		},
+
+		"2bath": {
+			weekly: 80,
+			"every other week": 95,
+			monthly: 125
+		},
+
+		"3bath": {
+			weekly: 90,
+			"every other week": 105,
+			monthly: 135
+		}
+	},
+
+	"6room": {
+		"1bath": {
+			weekly: 75,
+			"every other week": 85,
+			monthly: 115
+		},
+
+		"2bath": {
+			weekly: 80,
+			"every other week": 95,
+			monthly: 125
+		},
+
+		"3bath": {
+			weekly: 95,
+			"every other week": 110,
+			monthly: 140
+		}
+	},
+
+	"7room": {
+		"1bath": {
+			weekly: 80,
+			"every other week": 95,
+			monthly: 125
+		},
+
+		"2bath": {
+			weekly: 90,
+			"every other week": 105,
+			monthly: 135
+		},
+
+		"3bath": {
+			weekly: 100,
+			"every other week": 115,
+			monthly: 145
+		}
+	},
+
+	"8room": {
+		"1bath": {
+			weekly: 85,
+			"every other week": 100,
+			monthly: 130
+		},
+
+		"2bath": {
+			weekly: 95,
+			"every other week": 110,
+			monthly: 140
+		},
+
+		"3bath": {
+			weekly: 105,
+			"every other week": 120,
+			monthly: 150
+		}
+	},
+
+	"9room": {
+		"1bath": {
+			weekly: 90,
+			"every other week": 110,
+			monthly: 145
+		},
+
+		"2bath": {
+			weekly: 100,
+			"every other week": 120,
+			monthly: 155
+		},
+
+		"3bath": {
+			weekly: 110,
+			"every other week": 150,
+			monthly: 165
+		}
+	},
+
+	"9room": {
+		"1bath": {
+			weekly: 90,
+			"every other week": 110,
+			monthly: 145
+		},
+
+		"2bath": {
+			weekly: 100,
+			"every other week": 120,
+			monthly: 155
+		},
+
+		"3bath": {
+			weekly: 110,
+			"every other week": 150,
+			monthly: 165
+		}
+	},
+
+	"10room": {
+		"1bath": {
+			weekly: 95,
+			"every other week": 115,
+			monthly: 150
+		},
+
+		"2bath": {
+			weekly: 105,
+			"every other week": 125,
+			monthly: 160
+		},
+
+		"3bath": {
+			weekly: 115,
+			"every other week": 135,
+			monthly: 170
+		},
+
+		"4bath": {
+			weekly: 125,
+			"every other week": 145,
+			monthly: 180
+		}
+	},
+
+	"10room": {
+		"1bath": {
+			weekly: 95,
+			"every other week": 115,
+			monthly: 150
+		},
+
+		"2bath": {
+			weekly: 105,
+			"every other week": 125,
+			monthly: 160
+		},
+
+		"3bath": {
+			weekly: 115,
+			"every other week": 135,
+			monthly: 170
+		},
+
+		"4bath": {
+			weekly: 125,
+			"every other week": 145,
+			monthly: 180
+		}
+	},
+
+	"11room": {
+		"1bath": {
+			weekly: 100,
+			"every other week": 120,
+			monthly: 155
+		},
+
+		"2bath": {
+			weekly: 110,
+			"every other week": 130,
+			monthly: 165
+		},
+
+		"3bath": {
+			weekly: 120,
+			"every other week": 140,
+			monthly: 175
+		},
+
+		"4bath": {
+			weekly: 130,
+			"every other week": 150,
+			monthly: 185
+		}
+	},
+
+	"1attic": {
+		weekly: 20,
+		"every other week": 30,
+		monthly: 50
+	},
+
+	"2attic": {
+		weekly: 25,
+		"every other week": 35,
+		monthly: 55
+	}
+};
 
 //jQuery time
 $( document ).ready(function() {
@@ -88,6 +361,7 @@ $( document ).ready(function() {
 	};
 
 	var updateValues = function(){
+		vidaVerde.schedule = $("[name='schedule'].selected").val();
 		vidaVerde.numBedooms = parseInt($("[name='numbedrooms']").val() || 0);
 		vidaVerde.numAdditionalRooms = parseInt($("[name='numadditionalrooms']").val() || 0);
 
@@ -112,18 +386,19 @@ $( document ).ready(function() {
 	};
 
 	var calculateQuote = function(){
-		var quote = 0;
+		if(vidaVerde.numTotalRooms > 0 && vidaVerde.numBathrooms > 0){
+			var quote = vidaVerde.prices[vidaVerde.numTotalRooms+"room"][vidaVerde.numBathrooms+"bath"][vidaVerde.schedule];
 
-		quote += 50 + (vidaVerde.numTotalRooms - 1) * 5;
-		quote += vidaVerde.numBathrooms * 10;
-		quote += vidaVerde.laundry * 10;
-		quote += vidaVerde.beds * 5;
-		quote += vidaVerde.ovens * 20;
-		quote += vidaVerde.closets * 20;
-		quote += vidaVerde.fridges * 20;
-		quote += vidaVerde.windows * 10;
+			vidaVerde.numAttics > 0 ? quote += vidaVerde.prices[vidaVerde.numAttics+"attic"][vidaVerde.schedule] : false;
+			quote += vidaVerde.laundry * 10;
+			quote += vidaVerde.beds * 5;
+			quote += vidaVerde.ovens * 20;
+			quote += vidaVerde.closets * 20;
+			quote += vidaVerde.fridges * 20;
+			quote += vidaVerde.windows * 10;
 
-		$("#quote").text(quote.toString());
+			$("#quote").text(quote.toString());
+		}
 	};
 
 	$("input").change(updateValues);
