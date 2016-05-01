@@ -29,10 +29,30 @@
         <h3 class="fs-subtitle">Please enter your home's information.</h3>
         <h3 class="pad-bottom">I have: </h3>
         <div class="left-align">
-          <input type="number" name="numbedrooms" min="0" class="text" /> <text> bedrooms</text><br>
-          <input type="number" name="numbathrooms" min="0" class="text" /> <text> bathrooms</text><br>
-          <input type="number" name="numatticrooms" min="0" class="text" /> <text> attic rooms</text><br>
-          <input type="number" name="numadditionalrooms" min="0" class="text" /> <text> additional rooms, excluding the kitchen.</text><br>
+          <div class="input-group">
+            <div class="increment" data-operation="minus"><span class="glyphicon glyphicon-minus"></span></div>
+            <input type="number" name="numbedrooms" min="0" value="0" class="text" />
+            <div class="increment" data-operation="plus"><span class="glyphicon glyphicon-plus"></span></div> 
+            <text> bedrooms</text>
+          </div>
+          <div class="input-group">
+            <div class="increment" data-operation="minus"><span class="glyphicon glyphicon-minus"></span></div>
+            <input type="number" name="numbathrooms" min="0" value="0" class="text" />
+            <div class="increment" data-operation="plus"><span class="glyphicon glyphicon-plus"></span></div> 
+            <text> bathrooms</text>
+          </div>
+          <div class="input-group">
+            <div class="increment" data-operation="minus"><span class="glyphicon glyphicon-minus"></span></div>
+            <input type="number" name="numadditionalrooms" min="0" value="0" class="text" />
+            <div class="increment" data-operation="plus"><span class="glyphicon glyphicon-plus"></span></div>
+            <text> other rooms (excluding the kitchen)</text>
+          </div>
+          <div class="input-group">
+            <div class="increment" data-operation="minus"><span class="glyphicon glyphicon-minus"></span></div>
+            <input type="number" name="numatticrooms" min="0" value="0"class="text" />
+            <div class="increment" data-operation="plus"><span class="glyphicon glyphicon-plus"></span></div>
+            <text> attic rooms</text>
+          </div>
         </div>
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />

@@ -51,11 +51,11 @@ body {
 	font-family: montserrat;
 	color: #2C3E50;
 	font-size: 13px;
+	text-align: center;
 }
 
 #msform input.text {
-	width: 60px;
-	margin-right: 10px;
+	width: 50px;
 }
 
 .left-align {
@@ -149,7 +149,6 @@ body {
    color: white;
 }
 
-<<<<<<< HEAD
 /* Quote */
 
 .quote-header {
@@ -194,5 +193,32 @@ body {
 	text-align: center;
 }
 
+.increment {
+	background: #eaeaea;
+	padding: 10px;
+	border-radius: 50%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.glyphicon-plus {
+	padding-left: 2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 
 

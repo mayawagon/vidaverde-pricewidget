@@ -360,6 +360,18 @@ $( document ).ready(function() {
 		viewNext(event);
 	};
 
+	var increment = function(event){
+		var input = $(this).parent().find("input");
+		var value = parseInt(input.val());
+		var operation = $(this).attr("data-operation");
+		if(operation === "minus"){
+			value > 0 ? input.val(value - 1) : false;
+		} else {
+			input.val(value + 1);
+		}
+		updateValues();
+	};
+
 	var updateValues = function(){
 		vidaVerde.schedule = $("[name='schedule'].selected").val();
 		vidaVerde.numBedooms = parseInt($("[name='numbedrooms']").val() || 0);
@@ -406,6 +418,7 @@ $( document ).ready(function() {
 	$(".previous").click(viewPrevious);
 
 	$(".button.schedule").click(selectButton);
+	$(".increment").click(increment);
 
 	$(".submit").click(function(event){
                 viewNext(event);
