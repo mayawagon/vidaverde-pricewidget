@@ -18,14 +18,14 @@
       </ul>
       <!-- fieldsets -->
       <fieldset>
-        <h2 class="fs-title">Step 1</h2>
+        <!-- <h2 class="fs-title">Step 1</h2> -->
         <h3 class="fs-subtitle">What type of cleaning schedule would you prefer?</h3>
         <input type="button" name="schedule" class="button schedule" value="weekly">
         <input type="button" name="schedule" class="button schedule" value="every other week">
         <input type="button" name="schedule" class="button schedule" value="monthly">
       </fieldset>
       <fieldset>
-        <h2 class="fs-title">Step 2</h2>
+        <!-- <h2 class="fs-title">Step 2</h2> -->
         <h3 class="fs-subtitle">Please enter your home's information.</h3>
         <div class="left-align">
           <h3 class="pad-bottom">I have: </h3>
@@ -36,7 +36,7 @@
             <text> bedrooms</text>
           </div>
           <div class="input-group">
-            <div class="increment" data-operation="minus"><span class="glyphicon glyphicon-minus"></span></div>
+            <div class="increment" data-operation="minus" data-increment="half"><span class="glyphicon glyphicon-minus"></span></div>
             <input type="number" name="numbathrooms" min="0" value="0" class="text" />
             <div class="increment" data-operation="plus" data-increment="half"><span class="glyphicon glyphicon-plus"></span></div> 
             <text> bathrooms</text>
@@ -64,10 +64,10 @@
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h2 class="fs-title">Step 3</h2> 
-        <h3 class="quote-header">Your estimated cost per cleaning is:</h2>
+        <!-- <h2 class="fs-title">Step 3</h2>  -->
+        <h3 class="fs-subtitle">Your estimated cost per cleaning is:</h2>
         <h1 id="quote"></h1>
-        <h3 class="fs-subtitle">Please add any additional services you would like:</h3>
+        <h3 class="extras-subtitle">Please add any extra services you would like:</h3>
         <!-- Extras -->
         <div class="extras row">
           <div class="extra col-sm-4">

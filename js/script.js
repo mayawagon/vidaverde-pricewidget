@@ -367,10 +367,10 @@ $( document ).ready(function() {
 		var increment = $(this).attr("data-increment");
 		var step;
 
-		increment === "half" ? step = .5 : step = 1;
+		increment === "half" && value > 0 ? step = .5 : step = 1;
 
 		if(operation === "minus"){
-			value > 0 ? input.val(value - step) : false;
+			value > 1 ? input.val(value - step) : input.val(0);
 		} else {
 			input.val(value + step);
 		}

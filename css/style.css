@@ -102,10 +102,16 @@ body {
 }
 .fs-subtitle {
 	font-weight: normal;
-	font-size: 13px;
-	color: #666;
-	margin-bottom: 20px;
+	font-size: 15px;
+	margin-bottom: 25px;
 }
+
+.extras-subtitle {
+	font-size: .9em;
+	font-weight: normal;
+	color: #666;
+}
+
 /*progressbar*/
 #progressbar {
 	margin-bottom: 30px;
