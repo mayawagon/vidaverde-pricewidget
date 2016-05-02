@@ -362,12 +362,17 @@ $( document ).ready(function() {
 
 	var increment = function(event){
 		var input = $(this).parent().find("input");
-		var value = parseInt(input.val());
+		var value = parseFloat(input.val());
 		var operation = $(this).attr("data-operation");
+		var increment = $(this).attr("data-increment");
+		var step;
+
+		increment === "half" ? step = .5 : step = 1;
+
 		if(operation === "minus"){
-			value > 0 ? input.val(value - 1) : false;
+			value > 0 ? input.val(value - step) : false;
 		} else {
-			input.val(value + 1);
+			input.val(value + step);
 		}
 		updateValues();
 	};
