@@ -75,7 +75,7 @@ body {
 }
 
 .pad-bottom {
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 /*buttons*/
@@ -103,13 +103,12 @@ body {
 .fs-subtitle {
 	font-weight: normal;
 	font-size: 15px;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 }
-
 .extras-subtitle {
-	font-size: .9em;
+	font-size: 16px;
 	font-weight: normal;
-	color: #666;
+	color: #515151;
 }
 
 /*progressbar*/

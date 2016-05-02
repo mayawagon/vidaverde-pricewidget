@@ -413,7 +413,9 @@ $( document ).ready(function() {
 			quote += vidaVerde.closets * 20;
 			quote += vidaVerde.fridges * 20;
 			quote += vidaVerde.windows * 10;
-			quote += vidaVerde.numPets * 10;
+			if(vidaVerde.numPets > 0){
+				vidaVerde.numPets < 4 ? quote += 10 : quote += 10 + (vidaVerde.numPets - 3) * 5;
+			} 
 
 			$("#quote").text(quote.toString());
 		}
