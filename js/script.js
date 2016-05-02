@@ -357,6 +357,7 @@ $( document ).ready(function() {
 		var buttons = $(event.target).parent().find(".button");
 		buttons.removeClass("selected");
 		$(event.target).addClass("selected");
+		updateValues();
 		viewNext(event);
 	};
 
@@ -417,7 +418,11 @@ $( document ).ready(function() {
 				vidaVerde.numPets < 4 ? quote += 10 : quote += 10 + (vidaVerde.numPets - 3) * 5;
 			} 
 
+			var startupFee = vidaVerde.prices[vidaVerde.numTotalRooms+"room"][vidaVerde.numBathrooms+"bath"]["weekly"] * 2 
+				- vidaVerde.prices[vidaVerde.numTotalRooms+"room"][vidaVerde.numBathrooms+"bath"][vidaVerde.schedule];
+
 			$("#quote").text(quote.toString());
+			$("#quote-subtitle").text("(*An additional start-up fee of $" + startupFee + " will be charged on the first visit.)")
 		}
 	};
 
@@ -429,7 +434,7 @@ $( document ).ready(function() {
 	$(".increment").click(increment);
 
 	$(".submit").click(function(event){
-                viewNext(event);
+    viewNext(event);
 		return false;
 	});
 });
