@@ -422,7 +422,7 @@ $( document ).ready(function() {
 				- vidaVerde.prices[vidaVerde.numTotalRooms+"room"][vidaVerde.numBathrooms+"bath"][vidaVerde.schedule];
 
 			$("#quote").text(quote.toString());
-			$("#quote-subtitle").text("(*An additional start-up fee of $" + startupFee + " will be charged on the first visit.)")
+			$("#quote-subtitle").text("*An additional start-up fee of $" + startupFee + " will be charged on the first visit.")
 		}
 	};
 
