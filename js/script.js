@@ -426,6 +426,7 @@ $( document ).ready(function() {
 		}
 	};
 
+
 	$("input").change(updateValues);
 	$(".next").click(viewNext);
 	$(".previous").click(viewPrevious);
